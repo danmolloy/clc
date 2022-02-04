@@ -1,16 +1,48 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
+@layer components {
+  .layout {
+    @apply font-custom w-screen min-h-screen flex flex-col justify-between text-blue-900
+  }
+  .header {
+    @apply flex flex-row shadow h-24 justify-between items-center 
+  }
+  .header-link {
+    @apply p-2 
+  }
+  .menu-icon {
+    @apply rounded-full p-2 w-10 h-10 mr-2 hover:bg-blue-100 active:bg-blue-200
+  }
+  .menu {
+    @apply bg-white w-screen h-screen z-10 fixed flex flex-col
+  }
+  .menu-header {
+    @apply flex flex-row h-24 items-center w-full justify-end
+  }
+  .close-menu-icon {
+    @apply rounded-full p-2 w-10 h-10 mr-2 hover:bg-blue-200 active:bg-blue-300
+  }
+  .menu-items {
+    @apply flex flex-col border-black h-full justify-evenly
+  }
+  .menu-link {
+    @apply h-full flex flex-row items-center text-2xl justify-center hover:bg-blue-100 active:bg-blue-200
+  }
+  .main {
+    @apply h-full flex flex-col items-center
+  }
+  .footer {
+    @apply h-24 flex flex-row items-center justify-center bg-blue-100
+  }
+  .footer-links {
+    @apply w-10 h-10 p-2 text-gray-500 hover:text-gray-600 active:text-gray-700
+  }
+  .artists-list {
+    @apply flex flex-col p-2 self-start
+  }
+  .artist-link {
+    @apply p-2 hover:bg-blue-100 active:bg-blue-200 rounded m-1
+  }
 }
