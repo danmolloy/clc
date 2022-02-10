@@ -13,13 +13,13 @@ export default function Artist({ artistData }) {
         {artist}
       </h1>
 
-      {artistData && artistData[0].members 
+      {artistData !== undefined && artistData && artistData[0].members 
       && 
       <div>
         <h2>Members</h2>
         <div>
         <p>
-          {artistData[0].members && artistData[0].members}
+          {artistData[0].members}
         </p>
         </div>
       </div>
