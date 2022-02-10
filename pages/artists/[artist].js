@@ -36,7 +36,7 @@ export default function Artist({ artistData }) {
   )
 }
 
-export async function getStaticProps() {
+export async function getStaticProps(context) {
   const res = await fetch('https://raw.githubusercontent.com/wcollings/clc.github.io/utf8/record.json')
   const allData = await res.json()
   const artistData = allData && allData.filter(i => i.artist === 'Altan')
