@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 import Layout from '../../components/layout'
+import data from '../../data/record.json'
 
 export default function Artist({ artistData }) {
   const router = useRouter()
@@ -36,10 +37,9 @@ export default function Artist({ artistData }) {
   )
 }
 
-export async function getStaticProps(context) {
-  const res = await fetch('https://raw.githubusercontent.com/wcollings/clc.github.io/utf8/record.json')
-  const allData = await res.json()
-  const artistData = allData && allData.filter(i => i.artist === 'Altan')
+export async function getStaticProps({ params }) {
+
+  const artistData = data.filter(i => i.artist === params.artist)
 
   return {
     props: {
@@ -49,18 +49,12 @@ export async function getStaticProps(context) {
 }
 
 export async function getStaticPaths() {
-  const res = await fetch('https://raw.githubusercontent.com/wcollings/clc.github.io/utf8/record.json')
-  const data = await res.json()
-  const allParams = JSON.stringify(data.map(i => (
-{
-      params: {
-      artist: i.artist
-    }
-   }
-    )))
 
-  return {
-    paths: allParams,
-    fallback: false // false or 'blocking'
-  };
+  const paths = data.map((i) => ({ 
+    params: { "artist": `${i.artist}` },
+  }))
+  
+  return { 
+    paths, 
+    fallback: true };
 }
