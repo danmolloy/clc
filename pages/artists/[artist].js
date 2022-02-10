@@ -12,7 +12,7 @@ export default function Artist({ artistData }) {
       <h1>
         {artist}
       </h1>
-      
+
       {artistData && artistData[0].members 
       && 
       <div>
@@ -29,9 +29,14 @@ export default function Artist({ artistData }) {
       &&
         <div>
           <h2>Albums</h2>
+          <div>{artistData[0].albums.map(i => (
+            <div key={i[1]} className="flex flex-row">
+              <p>{i[0]}</p>
+              <p className='ml-2'>{i[1]}</p>
+            </div>
+          ))} </div>
         </div>}
 
-      {artistData && JSON.stringify(Object.keys(artistData[0]))}
       
     </Layout>
   )
