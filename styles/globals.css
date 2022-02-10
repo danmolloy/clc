@@ -10,7 +10,7 @@
     @apply flex flex-row shadow h-24 justify-between items-center 
   }
   .header-link {
-    @apply p-2 
+    @apply p-2 font-handwriting text-3xl
   }
   .menu-icon {
     @apply rounded-full p-2 w-10 h-10 mr-2 hover:bg-blue-100 active:bg-blue-200
@@ -31,7 +31,7 @@
     @apply h-full flex flex-row items-center text-2xl justify-center hover:bg-blue-100 active:bg-blue-200
   }
   .main {
-    @apply h-full flex flex-col items-center
+    @apply h-full flex flex-col items-center p-2
   }
   .footer {
     @apply h-24 flex flex-row items-center justify-center bg-blue-100
@@ -39,10 +39,32 @@
   .footer-links {
     @apply w-10 h-10 p-2 text-gray-500 hover:text-gray-600 active:text-gray-700
   }
+  .browse-search {
+    @apply flex flex-col md:flex-row  p-2
+  }
+  .search-bar {
+    @apply flex flex-col p-2 
+  }
+  .search-input {
+    @apply border m-2 rounded
+  }
+  .search-button {
+    @apply w-1/3 self-end mr-2 rounded shadow bg-blue-600 text-white hover:bg-blue-500 active:bg-blue-400
+  }
+  .browse-bar {
+    @apply flex flex-col p-2 
+  }
+  .browse-link {
+    @apply hover:bg-blue-100 active:bg-blue-200 p-2
+  }
   .artists-list {
     @apply flex flex-col p-2 self-start
   }
   .artist-link {
     @apply p-2 hover:bg-blue-100 active:bg-blue-200 rounded m-1
   }
+}
+
+.main {
+  min-height: calc(100vh - 12rem);
 }

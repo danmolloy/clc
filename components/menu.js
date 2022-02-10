@@ -20,7 +20,7 @@ export default function Menu(props) {
   )
 }
 
-const menuItems = [
+export const menuItems = [
   {
     name: "Home",
     link: "/"

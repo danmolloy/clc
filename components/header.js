@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { AiOutlineMenu } from 'react-icons/ai'
+import { AiOutlineMenu, AiOutlineSearch } from 'react-icons/ai'
 
 export default function Header(props) {
   return (
@@ -9,7 +9,10 @@ export default function Header(props) {
         Celtic Lyrics Corner
         </a>
       </Link>
-      <AiOutlineMenu className='menu-icon' onClick={() => props.showMenu()}/>
+      <div className='flex flex-row'>
+        <AiOutlineSearch className='menu-icon'/>
+        <AiOutlineMenu className='menu-icon' onClick={() => props.showMenu()}/>
+      </div>
     </div>
   )
 }
