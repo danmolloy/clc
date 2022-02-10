@@ -51,16 +51,16 @@ export async function getStaticProps(context) {
 export async function getStaticPaths() {
   const res = await fetch('https://raw.githubusercontent.com/wcollings/clc.github.io/utf8/record.json')
   const data = await res.json()
-  const params = JSON.stringify(data.map(i => (i.artist)))
+  const allParams = JSON.stringify(data.map(i => (
+{
+      params: {
+      artist: i.artist
+    }
+   }
+    )))
 
   return {
-    paths: [
-      {
-        params: {
-        artist: params
-      }
-     }
-    ],
+    paths: allParams,
     fallback: false // false or 'blocking'
   };
 }
