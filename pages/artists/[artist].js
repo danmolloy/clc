@@ -55,10 +55,12 @@ export async function getStaticPaths() {
 
   return {
     paths: [
-      { params: {
+      {
+        params: {
         artist: params
-      } }
+      }
+     }
     ],
-    fallback: true // false or 'blocking'
+    fallback: false // false or 'blocking'
   };
 }
