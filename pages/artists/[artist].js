@@ -55,9 +55,12 @@ export async function getStaticProps({ params }) {
 
 export async function getStaticPaths() {
 
-  const paths = data.map((i) => ({ 
+  const filteredData = data.filter(i => i.artist !== undefined)
+
+  const paths = filteredData.map((i) => ({ 
     params: { "artist": `${i.artist}` },
   }))
+
   
   return { 
     paths, 
